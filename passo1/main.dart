@@ -6,6 +6,10 @@ class Bicycle {
 
 	//construtor
 	Bicycle(this.cadence, this.speed, this.gear);
+
+	//toString()
+	@override
+	String toString() => 'Bicycle: $speed mph';
 }
 
 
