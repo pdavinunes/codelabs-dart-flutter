@@ -10,7 +10,7 @@ class Bicycle {
 	//getter
 	int get speed => _speed;
 
-	
+
 	void diminuirSpeed(int val){
 		_speed -= val;
 	}
@@ -29,5 +29,8 @@ void main() {
 
 	var bike = Bicycle(2, 1);
 	print(bike);
-	
+	bike.aumentarSpeed(5);
+	print(bike);
+	bike.diminuirSpeed(3);
+	print(bike);	
 }
