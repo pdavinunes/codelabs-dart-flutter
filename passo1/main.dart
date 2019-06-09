@@ -1,21 +1,33 @@
 class Bicycle {
 	//variaveis da classe Bicycle
 	int cadence;
-	int speed;
+	int _speed = 0;
 	int gear;
 
 	//construtor
-	Bicycle(this.cadence, this.speed, this.gear);
+	Bicycle(this.cadence, this.gear);
+
+	//getter
+	int get speed => _speed;
+
+	
+	void diminuirSpeed(int val){
+		_speed -= val;
+	}
+
+	void aumentarSpeed(int val){
+		_speed += val;
+	}
 
 	//toString()
 	@override
-	String toString() => 'Bicycle: $speed mph';
+	String toString() => 'Bicycle: $_speed mph';
 }
 
 
 void main() {
 
-	var bike = Bicycle(2, 0, 1);
+	var bike = Bicycle(2, 1);
 	print(bike);
 	
 }
