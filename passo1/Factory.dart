@@ -16,11 +16,23 @@ class Square implements Shape {
 	num get area => pow(side, 2);
 }
 
+Shape shapeFactory(String type){
+	if (type == 'circle') return Circle(2);
+	if (type == 'square') return Square(2);
+	throw 'Forma invalida! $type';
+}
+
 
 
 void main(){
-	final circle = Circle(2);
-	final square = Square(2);
+
+	//Instanciando normalmente os objetos de 'circle' e 'square' 
+	//final circle = Circle(2);
+	//final square = Square(2);
+
+	//Utilizando uma função de alto nivel para o Instanciamento
+	final circle = shapeFactory('circle');
+	final square = shapeFactory('square');
 	print(circle.area);
 	print(square.area);
 }
