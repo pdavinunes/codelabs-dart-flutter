@@ -1,6 +1,13 @@
 import 'dart:math';
 
 abstract class Shape {
+	
+	factory Shape (String type) {
+		if(type == 'circle') return Circle(2);
+		if(type == 'square') return Square(2);
+		throw 'Forma invalida! $type';
+	}
+
 	num get area;
 }
 
@@ -16,11 +23,11 @@ class Square implements Shape {
 	num get area => pow(side, 2);
 }
 
-Shape shapeFactory(String type){
-	if (type == 'circle') return Circle(2);
-	if (type == 'square') return Square(2);
-	throw 'Forma invalida! $type';
-}
+// Shape shapeFactory(String type){
+// 	if (type == 'circle') return Circle(2);
+// 	if (type == 'square') return Square(2);
+// 	throw 'Forma invalida! $type';
+// }
 
 
 
@@ -31,8 +38,11 @@ void main(){
 	//final square = Square(2);
 
 	//Utilizando uma função de alto nivel para o Instanciamento
-	final circle = shapeFactory('circle');
-	final square = shapeFactory('square');
+	//final circle = shapeFactory('circle');
+	//final square = shapeFactory('square');
+	
+	final circle = Shape('circle');
+	final square = Shape('square');
 	print(circle.area);
 	print(square.area);
 }
