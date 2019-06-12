@@ -1,6 +1,5 @@
 import 'dart:math';
 
-
 class Rectangle {
 
 	Point origin;
